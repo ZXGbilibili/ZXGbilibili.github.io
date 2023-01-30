@@ -23,25 +23,6 @@
     
     
     <entry>
-      <title>开篇</title>
-      <link href="/posts/39cb083c.html"/>
-      <url>/posts/39cb083c.html</url>
-      
-        <content type="html"><![CDATA[ <u>你好，陌生人</u><p>很开心在此相遇，这是我的第一篇文章</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>php变量</title>
       <link href="/posts/5bf1a375.html"/>
       <url>/posts/5bf1a375.html</url>
@@ -53,6 +34,25 @@
         <tags>
             
             <tag> php </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>开篇</title>
+      <link href="/posts/39cb083c.html"/>
+      <url>/posts/39cb083c.html</url>
+      
+        <content type="html"><![CDATA[ <u>你好，陌生人</u><p>很开心在此相遇，这是我的第一篇文章</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
             
         </tags>
       
