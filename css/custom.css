@@ -584,5 +584,25 @@ h6::before {
 }
 
 
-@import "//at.alicdn.com/t/c/font_3875374_xbavjdwclkk.css";
+@import "//at.alicdn.com/t/c/font_3875374_s2810ahx0mc.css";
+
+/* 上下两个是动态图标 */
+.iconfont {
+  font-family: "iconfont" !important;
+  /* 这里可以自定义图标大小 */
+  font-size: 3em;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* 动态图标设置 */
+svg.icon {
+  width: 1.28em;
+  height: 1.28em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
 
