@@ -1,0 +1,9 @@
+/* aplayer鎾斁鍣ㄥ湪绉诲姩绔�/杈冪獎绐楀彛鑷姩闅愯棌 */
+@media only screen and (max-width: 900px) {
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    } 
+    }
