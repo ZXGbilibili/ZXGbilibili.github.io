@@ -119,8 +119,8 @@ function showWelcome() {
                             break;
                         case "开封市":
                             posdesc = "刚正不阿包青天。";
-                        case "平顶山":
-                            posdesc = "汝河两岸百里景观，处处炉火连天,再来一份郏县饸饹面！";
+                        case "平顶山市":
+                            posdesc = "汝河两岸百里景观，处处炉火连天,再来一份郏县饸饹面🍜 ";
                             break;
                         case "洛阳市":
                             posdesc = "洛阳牡丹甲天下。";
