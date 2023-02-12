@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>ctf简单随笔</title>
+      <link href="/posts/e393dbb7.html"/>
+      <url>/posts/e393dbb7.html</url>
+      
+        <content type="html"><![CDATA[<div class="tip cogs"><p>仅简单记录，都是misc方面的简单题型。另外BUUCTF这个平台以后不会在去做了。</p></div><h1 id="Wireshark"><a href="#Wireshark" class="headerlink" title="Wireshark"></a>Wireshark</h1><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/ersan/wires%20hark.png"/></div></div><p>流量分析使用题目得到密码，由于是网站登录，打开之后过滤http 看到login，点开<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/ersan/wires%20hark1.png"/></div></div><br>得到flag{ffb7567a1d4f4abdffdb54e022f8facd}</p><h1 id="荷兰宽带数据泄露"><a href="#荷兰宽带数据泄露" class="headerlink" title="荷兰宽带数据泄露"></a>荷兰宽带数据泄露</h1><p>下载之后是bin后缀的二进制文件，使用RouterPassview搜索关键字username和password，最终flag是username<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/ersan/ctf3.png"/></div></div></p><h1 id="后门查杀"><a href="#后门查杀" class="headerlink" title="后门查杀"></a>后门查杀</h1><p>下载之后是个HTML文件，按照描述有后门且答案是MD5，使用D盾扫出来，在搜索pass密码即可<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/ersan/ctf4.png"/></div></div></p><h1 id="文件中的秘密"><a href="#文件中的秘密" class="headerlink" title="文件中的秘密"></a>文件中的秘密</h1><p>打开下载是一个图片，题目中得知就在文件上下功夫了，用stegsolve扫描文件就找到了是不是很简单。<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/ersan/ctf5.png"/></div></div><br>flag{870c5a72806115cb5439345d8b014396}</p><h1 id="LSB"><a href="#LSB" class="headerlink" title="LSB"></a>LSB</h1><p>下载文件是一个图片，这类型的无非就是隐藏提取信息，还是使用上面那个神器，发现类似二维码，在色素红绿蓝打开0，然后导出png,就得到了一个二维码，然后扫描就可以了。<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/ersan/ctf6.png"/></div></div><br>flag{1sb_i4_s0_Ea4y}</p><h1 id="rar"><a href="#rar" class="headerlink" title="rar"></a>rar</h1><p>下载之后解压是一个压缩包，<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/ersan/ctf11.png"/></div></div><br>解压之后得到flag<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/ersan/ctf7.png"/></div></div></p><h1 id="被嗅探的流量"><a href="#被嗅探的流量" class="headerlink" title="被嗅探的流量"></a>被嗅探的流量</h1><p>流量分析题<br>用wireshark 分析，题目描述文件传输。http.request.method==POST，直接过滤POST，HTTP追踪流，在图片末尾找到flag{da73d88936010da1eeeb36e945ec4b97}<br>题干是抓取了一段文件传输的数据， 过滤http contains flag 找到关键字flag<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/ersan/ctf8.png"/></div></div></p><h1 id="Qr"><a href="#Qr" class="headerlink" title="Qr"></a>Qr</h1><p>打开是一个二维码,使用在线工具扫描，这是个签到题吧，起初我想的复杂了，并没有分离出东西<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/ersan/ctf9.png"/></div></div></p><h1 id="镜子里面的世界"><a href="#镜子里面的世界" class="headerlink" title="镜子里面的世界"></a>镜子里面的世界</h1><p>旧活新整，改一下颜色值为0，得到flag{st3g0_ saurus_wr3cks}<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/ersan/ctf10.png"/></div></div></p><h1 id="Ningen"><a href="#Ningen" class="headerlink" title="Ningen"></a>Ningen</h1><p>以下是描述文件，直接binwork分离出一个压缩包文件，接着破解<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/ersan/ctf12.png"/></div></div><br>打开就得到了flag{b025fc9ca797a67d2103bfbc407a6d5f}<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/ersan/ctf13.png"/></div></div></p><h1 id="小明的保险箱"><a href="#小明的保险箱" class="headerlink" title="小明的保险箱"></a>小明的保险箱</h1><p>步骤和上面一样分离出压缩包，破解密码就得出答案了<br>flag{75a3d68bf071ee188c418ea6cf0bb043}<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/ersan/ctf14.png"/></div></div></p><h1 id="爱因斯坦"><a href="#爱因斯坦" class="headerlink" title="爱因斯坦"></a>爱因斯坦</h1><p>图片题，分离出来一个压缩包，刚开始没破解出来，以为是伪加密，改了一下没成功<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/ersan/ctf15.png"/></div></div><br>在图片属性有一串密码字样的字母，把它输上去，打开一个文本就得到flag{dd22a92bf2cceb6c0cd0d6b83ff51606}<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/ersan/ctf16.png"/></div></div></p><h1 id="easycap"><a href="#easycap" class="headerlink" title="easycap"></a>easycap</h1><p>题目没有描述只给网络这个单词，打开wires hark只有tcp协议找到最后看到了FIN过滤点开就看到FLAG:385b87afc8671dee07550290d16a8071<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/ersan/ctf17.png"/></div></div></p><h1 id="隐藏的钥匙"><a href="#隐藏的钥匙" class="headerlink" title="隐藏的钥匙"></a>隐藏的钥匙</h1><p>原题描述：路飞一行人千辛万苦来到了伟大航道的终点，找到了传说中的One piece，但是需要钥匙才能打开One Piece大门，钥匙就隐藏在下面的图片中，聪明的你能帮路飞拿到钥匙，打开One Piece的大门吗？ 注意：得到的 flag 请包上 flag{} 提交<br>下载是个路飞图片，想着能分离出来东西，也确实分离出来了<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/ersan/ctf18.png"/></div></div><br>到这里再也没有信息了，上网查了一下，纯无语，用010直接搜索就行了，我搜索的时候发现编码不对，用编辑器编辑utf-8搜索flag在base解码就行flag{377cbadda1eca2f2f73d36277781f00a}<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/ersan/ctf19.png"/></div></div></p><h1 id="另外一个世界"><a href="#另外一个世界" class="headerlink" title="另外一个世界"></a>另外一个世界</h1><p>图片题放到010里面在最后有二进制结尾，其实前面也没找到什么有用信息，每八位一组编码ascll解码得到flag{koekj3s},还有就是二进制转文字的工具是什么。<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/ersan/ctf20.png"/></div></div></p><h1 id="FLAG"><a href="#FLAG" class="headerlink" title="FLAG"></a>FLAG</h1><p>下载之后是图片放到Stegsolve发现了PK尝试压缩以下，打开显示报错，不过不影响，解压之后放到虚拟机运行得到，或者使用ida打开也可以，不过这个软件真的很陌生所以就使用kali运行打开了就得到了flag{dd0gf4c3tok3yb0ard4g41n~~~}<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/ersan/ctf21.png"/></div></div></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ctf </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ctf </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>TCP三握四挥</title>
       <link href="/posts/67bf831d.html"/>
       <url>/posts/67bf831d.html</url>
