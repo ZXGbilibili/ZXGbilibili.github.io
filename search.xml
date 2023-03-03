@@ -204,6 +204,31 @@
     
     
     <entry>
+      <title>记录一次靶场</title>
+      <link href="/posts/8c464f49.html"/>
+      <url>/posts/8c464f49.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="基于表单的暴力破解"><a href="#基于表单的暴力破解" class="headerlink" title="基于表单的暴力破解"></a>基于表单的暴力破解</h1><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/posts/b1.webp"/></div></div><p>输入任意尝试，使用burp抓包清除默认payload，手动添加payload，发送给攻击器，选择第四个攻击方式<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/posts/b2.webp"/></div></div><br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/posts/b3.webp"/></div></div><br>设置好1和2 的配置文件（字典），也可手动添加<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/posts/b4.webp"/></div></div><br>看到了结果，响应长度明显不一样，输入admin  123456 登录成功<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/posts/b5.webp"/></div></div><br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/posts/b6.webp"/></div></div></p><h1 id="验证码绕过-on-server"><a href="#验证码绕过-on-server" class="headerlink" title="验证码绕过(on server)"></a>验证码绕过(on server)</h1><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/posts/b7.webp"/></div></div><p>可以看到验证码调用的是后端showvcode.php代码完成的一张图片<br>那么只改变用户名和密码，虽然报错，但验证码可反复重复使用，还是老样子发送到intruder<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/posts/b8.webp"/></div></div><br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/posts/b9.webp"/></div></div><br>测试成功admin 123456 因此和第一个也就多了一个验证码php图片验证。基本一样<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/posts/b10.webp"/></div></div></p><h1 id="验证码绕过-on-client"><a href="#验证码绕过-on-client" class="headerlink" title="验证码绕过(on client)"></a>验证码绕过(on client)</h1><p>验证码通过前端js完成，<br>查看验证码有createCode函数<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/posts/b11.webp"/></div></div><br>往下找，定义是选择数组里面5个组合完成<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/posts/b12.webp"/></div></div><br>反复尝试了一下，发现无论输入错误验证码，或者为空，都返回用户域名username or password is not exists～（用户名或密码不存在）此时验证码就不起作用了，验证码完全交给前端，后端并没有验证工作，因此还是只爆破用户名和密码就行了。<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/posts/b13.webp"/></div></div><br>剩下的和之前一样，省略一些步骤了，直接看结果<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/posts/b14.webp"/></div></div></p><h1 id="token防爆破"><a href="#token防爆破" class="headerlink" title="token防爆破"></a>token防爆破</h1><p>有关token简单介绍<br>①客户端使⽤⽤户名跟密码请求登录<br>②服务端收到请求，去验证⽤户名与密码<br>③验证成功后，服务端会签发⼀个 Token，再把这个 Token 发送给客户端<br>④客户端收到 Token 以后可以把它存储起来，⽐如放在 Cookie ⾥或者 Local Storage ⾥<br>⑤客户端每次向服务端请求资源的时候需要带着服务端签发的 Token<br>⑥服务端收到请求，然后去验证客户端请求⾥⾯带着的 Token，如果验证成功，就向客户端返回请求的数据<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/posts/b15.webp"/></div></div><br>审计第二次token，尾数0441，再次登录，既下一次token就获取出来了<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/posts/b16.webp"/></div></div><br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/posts/b17.webp"/></div></div><br>Burp绕过token，这里选择pitchfork 一对一模式，设置密码和token两个，添加到payload<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/posts/b18.webp"/></div></div><br>第二个与HTML的相应界面匹配，第二个payload选择Recursive grep<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/posts/b19.webp"/></div></div><br>配置响应包，选中设置标记token的值，然后把重定向设置成always<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/posts/b20.webp"/></div></div><br>注意这里的线程数设置为1，不然会显示“递归 grep 有效负载不能与多里面求线程一起使用”报错，因为我这是pro版本，我找了半天，最新的burp都是在Rsource pool里设置。<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/posts/b21.webp"/></div></div><br>最终成功爆破<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/posts/b22.webp"/></div></div></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 靶场 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 爆破 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>vscode安装</title>
       <link href="/posts/4581a166.html"/>
       <url>/posts/4581a166.html</url>
