@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>ctf web</title>
+      <link href="/posts/eb490a41.html"/>
+      <url>/posts/eb490a41.html</url>
+      
+        <content type="html"><![CDATA[<p>一个ctf的web的题，包括了php方面知识。<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/some/phpweb1.webp"/></div></div><br>下面我们就对其进行分析<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show_source() 函数对文件进行语法高亮显示。</span><br></pre></td></tr></table></figure><br>然后下面有一个include，这里说一下，引用文件的方法有两种：require 及 include。两种方式提供不同的使用弹性。<br>这里的include也就是引用<br>require 的使用方法如 require(“MyRequireFile.php”); 。这个函数通常放在 PHP 程序的最前面，PHP 程序在执行前，就会先读入 require 所指定引入的文件，使它变成 PHP 程序网页的一部份。常用的函数，亦可以这个方法将它引入网页中。<br>include 使用方法如 include(“MyIncludeFile.php”); 。这个函数一般是放在流程控制的处理部分中。PHP 程序网页在读到 include 的文件时，才将它读进来。这种方式，可以把程序执行时的流程简单化。<br>他们两个的用途是完全一样的，不一定非得哪个放在最前面哪个放在中间。他们最根本的区别在于错误处理的方式不一样。<br>require一个文件存在错误的话，那么程序就会中断执行了，并显示致命错误<br>include一个文件存在错误的话，那么程序不会中端，而是继续执行，并显示一个警告错误。<br>这个题是传参get 提交，满足条件就有 flag1 flag2<br>首先创建了两个GET变量a和b，然后进行了三次判断，<br>第一次判断，同时满足a=0和a为真才能显示出flag1这个变量。<br>因为php语言中“==”为弱类型判断，会自动把判断转为同类型再比较，<br>故php中可以得到“ab” == 0 为真，所以我们在URL栏手动传参a=ab：<br>此时就只出了一半<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/some/phpweb2.webp"/></div></div><br>然后进行b的构造<br>第二次进行判断 使用is_numeric函数，is_numeric() 函数用于检测变量是否为数字或数字字符串。<br>因此我们要返回false，避免退出程序。从而进行第三步if判断<br>如果b&gt; 1234输出flag  我们构造“ ?a=a&amp;b=1244m“  这个后面的字母是防止第二步数字或者生成数字字符串。然后就返回flag了<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/some/phpweb3.webp"/></div></div></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ctf web php </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>PHP引号</title>
+      <link href="/posts/12e1ab65.html"/>
+      <url>/posts/12e1ab65.html</url>
+      
+        <content type="html"><![CDATA[<p>在php中单引号和双引号的区别：<br>在PHP中，字符串的定义可以使用英文单引号’ ‘，也可以使用英文双引号” “。<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1一般情况下，两者是通用的.但双引号内部变量会解析,单引号不解析.</span><br><span class="line">2双引号执行转译字符，单引号不转译  \n \r \t  \</span><br><span class="line">3它执行转译  \\ 和 \ &#x27;</span><br><span class="line">4能使用单引号就不适合双引号，因为单引号比双引号效率快</span><br><span class="line">5如果是字符串和变量一起使用的时候，用&quot; . &quot; 来连接</span><br><span class="line">6双引号里面插入单引号，单引号里面插入变量，变量会解析 &quot; &#x27;$a&#x27; &quot;</span><br><span class="line">7如果双引号里面插入变量的时候请在后面加上空格或者 ， 号 ，</span><br><span class="line">当变量和字符串想在一起的时候，用 &quot; . &quot; 可进行拼接</span><br></pre></td></tr></table></figure><br>PHP允许我们在双引号串中直接包含字串变量。<br>而单引号串中的内容总被认为是普通字符，因此单引号中的内容不会被转义效率更高。<br>例如<br>如果是单引号就会输出 $name  也就是不解析，直接输出了<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/some/phpyinhao1.webp"/></div></div><br>转义字符 “ \ ”的作用：去除PHP赋予某些字符的特殊含义<br>转义字符的用处：<br>1：将普通字符转为特殊用途，如后退键，回车键等。<br>2：用来将特殊意义的字符转换回它原来的意义。<br>3：在数据写入数据库前，都会使用转义字符(函数)对一些敏感字符进行转义。避免网站被注入攻击。<br>如果在双引号的包裹下，我们不想让他自动解析变量，可以在变量名前面加入转义字符。<br>正常来说他被解释了，但是加了”\”就不解析<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/some/phpyinhao2.webp"/></div></div><br>此方法就解决了当字符串和变量一起出现的时候，是通过一个”. “去进行连接不然会报错<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/some/phpyinhao3.webp"/></div></div><br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/some/phpyinhao4.webp"/></div></div><br>加入双引号，解析<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/some/phpyinhao5.webp"/></div></div></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> PHP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> php引号 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>应急响应</title>
       <link href="/posts/8effea6a.html"/>
       <url>/posts/8effea6a.html</url>
