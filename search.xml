@@ -429,7 +429,32 @@
     
     
     <entry>
-      <title>msf</title>
+      <title>MS12-020</title>
+      <link href="/posts/b03570f9.html"/>
+      <url>/posts/b03570f9.html</url>
+      
+        <content type="html"><![CDATA[<p>实验工具<br>Vm虚拟机<br>Kali攻击机 192.168.137.128<br>Win7虚拟机靶机 192.168.137.147<br>连通性测试<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/%E7%AC%94%E8%AE%B0/ms12%20%E9%9D%B6%E6%9C%BAIP.jpg"/></div></div><br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/%E7%AC%94%E8%AE%B0/%E6%94%BB%E5%87%BB%E6%9C%BA12%20IP.png"/></div></div><br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/%E7%AC%94%E8%AE%B0/12%20ping%20%E6%B5%8B%E8%AF%95.png"/></div></div><br>启动模块<br>在kali终端输入msfconsole启动模块<br><a href="https://a.www.hlsiyy.love/%E7%AC%94%E8%AE%B0/12%20%20msf%20%E6%A8%A1%E5%9D%97.png">https://a.www.hlsiyy.love/%E7%AC%94%E8%AE%B0/12%20%20msf%20%E6%A8%A1%E5%9D%97.png</a><br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://www.hlsiyy.love/wp-content/uploads/2022/11/image-1.png"/></div></div><br>输入命令<br>利用MS12-020漏洞，输入命令search ms12_020<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/%E7%AC%94%E8%AE%B0/12%20%E6%9F%A5%E6%89%BE.png"/></div></div><br>执行<br>利用‘1‘的漏洞，use引用漏洞路径，利用了rdp协议的一种漏洞，输入命令use auxiliary/dos/windows/rdp/ms12_020_maxchannelids，也可直接use 1 回车执行。<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/%E7%AC%94%E8%AE%B0/12%20%E5%88%A9%E7%94%A8.png"/></div></div><br>引用<br>引用后，输入show options查看漏洞配置内容。<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/%E7%AC%94%E8%AE%B0/12%20%E8%BE%93%E5%85%A5.png"/></div></div><br>配置<br> 使用了3389端口，配置rhosts即可，该漏洞利用rdp协议，rport不需要修改，输入命令，set rhosts IP地址，IP地址为Windows 7虚拟机的IP192.168.137.147。<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/%E7%AC%94%E8%AE%B0/12%20%E9%85%8D%E7%BD%AE.png"/></div></div><br>运行<br>输入run运行，回到Windows 7发现虚拟机蓝屏，证明MS12_020漏洞攻击成功。<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/%E7%AC%94%E8%AE%B0/12%20%E8%BF%90%E8%A1%8C.png"/></div></div><br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/%E7%AC%94%E8%AE%B0/12%20%E8%93%9D%E5%B1%8F.png"/></div></div><br>补充：<br>刚开始做的时候没成功，查看一下远程设置，端口，系统保护机制，由于这是win7版本，较老的机型我没做。不过原理一样。当然现在只是学习参考，只要不‘傻‘，就不会被攻击。<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://www.hlsiyy.love/wp-content/uploads/2022/12/12-%E6%89%93%E5%BC%80%E8%BF%9C%E7%A8%8B.png"/></div></div><br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://www.hlsiyy.love/wp-content/uploads/2022/12/12-nmap%E7%AB%AF%E5%8F%A3.png"/></div></div></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网安 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MS12-020 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MSF</title>
       <link href="/posts/1f8d6f39.html"/>
       <url>/posts/1f8d6f39.html</url>
       
@@ -445,7 +470,7 @@
       
         <tags>
             
-            <tag> 复现-网安 </tag>
+            <tag> MSF </tag>
             
         </tags>
       
@@ -470,7 +495,7 @@
       
         <tags>
             
-            <tag> 复现-网安 </tag>
+            <tag> MS17-010 </tag>
             
         </tags>
       
