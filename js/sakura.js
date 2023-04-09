@@ -1,7 +1,7 @@
 var stop, staticx;
 var img = new Image();
 // 将引入的图片文件替换为你想要的即可
-img.src = "https://img.cdn.nesxc.com/upload/wordpress/202202251325420webp";
+img.src = "https://cdn.staticaly.com/gh/ZXGbilibili/picture@main/some/star2.webp";
 
 function Sakura(x, y, s, r, fn) {
     this.x = x;
