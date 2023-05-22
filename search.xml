@@ -604,31 +604,6 @@
     
     
     <entry>
-      <title>php变量</title>
-      <link href="/posts/5bf1a375.html"/>
-      <url>/posts/5bf1a375.html</url>
-      
-        <content type="html"><![CDATA[<h1 id="Php是一个"><a href="#Php是一个" class="headerlink" title="Php是一个"></a>Php是一个</h1><div class='checkbox green'><input type="radio" />            <p>动态网站开发的脚本语言，特点是交互性，会有数据的传递，而PHP作为中间人，需要进行数据的传递，传递的前提是PHP能自己临时储存数据</p>            </div><div class='checkbox green'><input type="radio" />            <p>php变量 用于临时储存值的容器，可以储存数字 ，数组，文本 ，布尔……还可以是自己定义的类型</p>            </div><div class='checkbox green'><input type="radio" />            <p>里面的值随时可以发生变化</p>            </div><div class='checkbox green'><input type="radio" />            <p>是程序执行过程，数据的临时存放场所</p>            </div><div class='checkbox green'><input type="radio" />            <p>变量可以随便使用一个多个都可以</p>            </div><div class='checkbox green'><input type="radio" />            <p>变量名等于代表你存放数据的场所（内存） （php 的变量使用的是 $ 符号，php 的变量不需要提前声明，直接赋值就可以。）</p>            </div><div class='checkbox green'><input type="radio" />            <p>变量名区分大小写（变量 常量 php.ini 区分大小写 ，其他不区分）</p>            </div><h1 id="变量命名规则"><a href="#变量命名规则" class="headerlink" title="变量命名规则"></a>变量命名规则</h1><p>变量必须以 $ 符号开头，其后是变量的名称，$ 并不是变量名的一部分；<br>变量名必须以字母（a-z）大小写或下划线开头；<br>变量名不能以数字开头；<br>变量名只能包含字母（a-z）、数字（0-9）和下划线（_）；<br>与其它语言不通的是，PHP 中的一些关键字也可以作为变量名（例如 true、for）。<br>PHP 中的变量名是区分大小写的，因此 $var 和 $Var 表示的是两个不同的变量</p><h1 id="变量命名规范"><a href="#变量命名规范" class="headerlink" title="变量命名规范"></a>变量命名规范</h1><p>下划线命名法：将构成变量名的单词以下划线分割，例如 get_user_age、set_user_age；<br>驼峰式命名法(推荐使用)：第一个单词全小写，后面的单词首字母小写，例如 getUserAge、getUserName；<br>帕斯卡命名法：将构成变量名的所有单词首字母大写，例如 Name、UserName、$GetName。<br>赋值<br>传值赋值（默认） 使用‘=’将赋值表达式的值赋给另一个变量（单独分配房间）<br>相互不干扰。<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/%E6%96%87%E7%AB%A0/%E5%8F%98%E9%87%8F1.png"/></div></div></p><h1 id="变量总结"><a href="#变量总结" class="headerlink" title="变量总结"></a>变量总结</h1><p class='p red'>不论是使用哪种高级程序语言编写程序，变量都是其程序的基本组成单位。变量相当于内存中一个数据存储空间的表示，通过变量名可以访问到变量的具体的值。 PHP 是一种弱类型的语言，所以使用变量前不用提前声明，变量在第一次赋值时会被自动创建，这个原因使得 PHP 的语法和 C 语言、Java 等强类型语言有很大的不同。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> PHP </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> php </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>开篇</title>
       <link href="/posts/39cb083c.html"/>
       <url>/posts/39cb083c.html</url>
@@ -646,6 +621,31 @@
         <tags>
             
             <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>php变量</title>
+      <link href="/posts/5bf1a375.html"/>
+      <url>/posts/5bf1a375.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="Php是一个"><a href="#Php是一个" class="headerlink" title="Php是一个"></a>Php是一个</h1><div class='checkbox green'><input type="radio" />            <p>动态网站开发的脚本语言，特点是交互性，会有数据的传递，而PHP作为中间人，需要进行数据的传递，传递的前提是PHP能自己临时储存数据</p>            </div><div class='checkbox green'><input type="radio" />            <p>php变量 用于临时储存值的容器，可以储存数字 ，数组，文本 ，布尔……还可以是自己定义的类型</p>            </div><div class='checkbox green'><input type="radio" />            <p>里面的值随时可以发生变化</p>            </div><div class='checkbox green'><input type="radio" />            <p>是程序执行过程，数据的临时存放场所</p>            </div><div class='checkbox green'><input type="radio" />            <p>变量可以随便使用一个多个都可以</p>            </div><div class='checkbox green'><input type="radio" />            <p>变量名等于代表你存放数据的场所（内存） （php 的变量使用的是 $ 符号，php 的变量不需要提前声明，直接赋值就可以。）</p>            </div><div class='checkbox green'><input type="radio" />            <p>变量名区分大小写（变量 常量 php.ini 区分大小写 ，其他不区分）</p>            </div><h1 id="变量命名规则"><a href="#变量命名规则" class="headerlink" title="变量命名规则"></a>变量命名规则</h1><p>变量必须以 $ 符号开头，其后是变量的名称，$ 并不是变量名的一部分；<br>变量名必须以字母（a-z）大小写或下划线开头；<br>变量名不能以数字开头；<br>变量名只能包含字母（a-z）、数字（0-9）和下划线（_）；<br>与其它语言不通的是，PHP 中的一些关键字也可以作为变量名（例如 true、for）。<br>PHP 中的变量名是区分大小写的，因此 $var 和 $Var 表示的是两个不同的变量</p><h1 id="变量命名规范"><a href="#变量命名规范" class="headerlink" title="变量命名规范"></a>变量命名规范</h1><p>下划线命名法：将构成变量名的单词以下划线分割，例如 get_user_age、set_user_age；<br>驼峰式命名法(推荐使用)：第一个单词全小写，后面的单词首字母小写，例如 getUserAge、getUserName；<br>帕斯卡命名法：将构成变量名的所有单词首字母大写，例如 Name、UserName、$GetName。<br>赋值<br>传值赋值（默认） 使用‘=’将赋值表达式的值赋给另一个变量（单独分配房间）<br>相互不干扰。<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://a.www.hlsiyy.love/%E6%96%87%E7%AB%A0/%E5%8F%98%E9%87%8F1.png"/></div></div></p><h1 id="变量总结"><a href="#变量总结" class="headerlink" title="变量总结"></a>变量总结</h1><p class='p red'>不论是使用哪种高级程序语言编写程序，变量都是其程序的基本组成单位。变量相当于内存中一个数据存储空间的表示，通过变量名可以访问到变量的具体的值。 PHP 是一种弱类型的语言，所以使用变量前不用提前声明，变量在第一次赋值时会被自动创建，这个原因使得 PHP 的语法和 C 语言、Java 等强类型语言有很大的不同。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> PHP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> php </tag>
             
         </tags>
       
